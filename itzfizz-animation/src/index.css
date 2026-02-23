@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  overflow: hidden;
+}
+
+/* BACKGROUND */
+.app {
+  height: 100vh;
+  background: linear-gradient(120deg, #050505, #111, #050505);
+  background-size: 300% 300%;
+  animation: gradientMove 10s ease infinite;
+  color: white;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* DASHBOARD */
+.dashboard {
+  position: absolute;
+  top: 30px;
+  width: 100%;
+  text-align: center;
+  z-index: 20;
+}
+
+.title {
+  font-size: 48px;
+  letter-spacing: 10px;
+}
+
+.title span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.hint {
+  margin-top: 10px;
+  font-size: 14px;
+  opacity: 0.6;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.4; }
+  50% { opacity: 1; }
+  100% { opacity: 0.4; }
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  position: relative;
+}
+
+/* CAR */
+.car {
+  position: absolute;
+  left: -300px;
+  top: 60%;
+  transform: translateY(-50%);
+  width: 320px;
+  filter: drop-shadow(0 0 15px rgba(0, 255, 204, 0.6));
+}
+
+/* TEXT */
+.text {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 40px;
+  opacity: 0;
+}
+
+.t1 { top: 30%; }
+.t2 { top: 38%; }
+.t3 { top: 46%; }
+
+/* PROGRESS */
+.progress {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 14px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: gray;
+  opacity: 0.5;
+}
+
+.dot.active {
+  background: #00ffcc;
+  opacity: 1;
+  box-shadow: 0 0 10px rgba(0, 255, 204, 0.8);
+}
